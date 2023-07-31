@@ -35,8 +35,11 @@ HAVING  COUNT(c2.store_id) > 300;
 
 **Решение**:
 ```
-
+SELECT COUNT(film_id) AS 'Number of films which duration is above average (115)'  
+FROM film f
+WHERE `length` > (SELECT AVG(`length`) FROM film f2)
 ```
+<kbd>![](img/sakila_films_length_greater_avg.png)</kbd>
 
 ### Задание 3
 
